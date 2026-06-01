@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2 id="text">Welcome to learn new thing Today </h2>
+
+<button onclick="showMenu()">Show Menu</button>
+
+<script>
+function showMenu() {
+
+    let choice = prompt(
+        "1. Change Color\n" +
+        "2. Increase Font Size\n" +
+        "3. Hide Element\n" +
+        "4. Exit\n" +
+        "Enter your choice:"
+    );
+
+    let element = document.getElementById("text");
+
+    switch(choice) {
+
+        case "1":
+            element.style.color = "red";
+            alert("Color Changed");
+            break;
+
+        case "2":
+            element.style.fontSize = "30px";
+            alert("Font Size Increased");
+            break;
+
+        case "3":
+            element.style.display = "none";
+            alert("Element Hidden");
+            break;
+
+        case "4":
+            alert("Program Exited");
+            break;
+
+        default:
+            alert("Invalid Choice");
+    }
+}
+</script>
+
+</body>
+</html>
