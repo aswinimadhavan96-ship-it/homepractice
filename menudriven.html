@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu Driven Program</title>
+</head>
+<body>
+
+    <h2>Menu Driven Program</h2>
+
+    <p id="text">Hello DOM</p>
+
+    Number 1:
+    <input type="number" id="num1"><br><br>
+
+    Number 2:
+    <input type="number" id="num2"><br><br>
+
+    <button onclick="showMenu()">Show Menu</button>
+
+    <script>
+        function showMenu() {
+
+            let choice = prompt(
+                "1. Read Text from DOM\n" +
+                "2. Add Two Numbers\n" +
+                "3. Change CSS\n" +
+                "4. Exit\n" +
+                "Enter your choice:"
+            );
+
+            switch(choice) {
+
+                case "1":
+                    alert(document.getElementById("text").innerText);
+                    break;
+
+                case "2":
+                    let n1 = Number(document.getElementById("num1").value);
+                    let n2 = Number(document.getElementById("num2").value);
+                    alert("Sum = " + (n1 + n2));
+                    break;
+
+                case "3":
+                    document.getElementById("text").style.color = "red";
+                    alert("Color Changed");
+                    break;
+
+                case "4":
+                    alert("Program Exited");
+                    break;
+
+                default:
+                    alert("Invalid Choice");
+            }
+        }
+    </script>
+
+</body>
+</html>
