@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SessionStorage Counter</title>
+</head>
+<body>
+
+    <h2>SessionStorage Counter</h2>
+
+    <p>Button Click Count:</p>
+
+    <h1 id="count">0</h1>
+
+    <button onclick="increaseCount()">
+        Click Me
+    </button>
+
+    <script>
+
+        let count = sessionStorage.getItem("counter");
+
+
+        if (count === null) {
+            count = 0;
+            sessionStorage.setItem("counter", count);
+        }
+
+        document.getElementById("count").innerText = count;
+
+        function increaseCount() {
+
+            let count = sessionStorage.getItem("counter");
+
+            count = Number(count) + 1;
+
+            sessionStorage.setItem("counter", count);
+
+            document.getElementById("count").innerText = count;
+        }
+
+    </script>
+
+</body>
+</html>
